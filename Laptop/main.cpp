@@ -10,4 +10,10 @@ int main()
 	lap1.PrintLaptop();
 	Laptop lap2("Dell", "Silver", 15000, "AMD Ryzen", "Kingston", "AMD Radeon", "DDR4");
 	lap2.PrintLaptop();
-	}
+
+	laptop.SetCPU("AMD Ryzen 9");
+	laptop.SetSSD("Kingston 2TB");
+	laptop.SetVideoCard("NVIDIA");
+	laptop.SetRAM("32GB DDR4");
+	laptop.PrintLaptop();
+}
