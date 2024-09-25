@@ -8,6 +8,7 @@ class SSD
 	char* name;
 public:
 	SSD(const char* n);
+	SSD(const SSD& other);
 	void PrintSSD() const;
 	~SSD();
 	void SetName(const char* n);

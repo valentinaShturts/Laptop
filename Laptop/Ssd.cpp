@@ -4,6 +4,11 @@ SSD::SSD(const char* n)
 	name = new char[strlen(n) + 1];
 	strcpy_s(name, strlen(n) + 1, n);
 }
+SSD::SSD(const SSD& other)
+{
+	this->name = new char(strlen(other.name) + 1);
+	strcpy_s(this->name, strlen(other.name) + 1, other.name);
+}
 void SSD::PrintSSD() const
 {
 	cout << "SSD name: " << name << endl;

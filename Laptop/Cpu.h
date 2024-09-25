@@ -8,6 +8,7 @@ class CPU
 	char* name;
 public:
 	CPU(const char* n);
+	CPU(const CPU& other);
 	void PrintCPU() const;
 	~CPU();
 	void SetName(const char* n);

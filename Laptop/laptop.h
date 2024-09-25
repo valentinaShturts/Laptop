@@ -17,6 +17,7 @@ public:
 	static int laptopCount;
 	Laptop(const char* n, const char* c, int p, const char* cpu_name, const char* ssd_name, const char* vid_name, const char* ram_name);
 	Laptop(const char* n, const char* c);
+	Laptop(const Laptop& other);
 	~Laptop();
 
 	void PrintLaptop() const;

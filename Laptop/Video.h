@@ -8,6 +8,7 @@ class VideoCard
 	char* name;
 public:
 	VideoCard(const char* n);
+	VideoCard(const VideoCard& other);
 	void PrintVideoCard() const;
 	~VideoCard();
 	void SetName(const char* n);

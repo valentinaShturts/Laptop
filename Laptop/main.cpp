@@ -8,7 +8,7 @@ int main()
 	laptop.PrintLaptop();
 	Laptop lap1("Aorus", "White");
 	lap1.PrintLaptop();
-	Laptop lap2("Dell", "Silver", 15000, "AMD Ryzen", "Kingston", "AMD Radeon", "DDR4");
+	Laptop lap2(laptop);
 	lap2.PrintLaptop();
 
 	laptop.SetCPU("AMD Ryzen 9");
@@ -16,4 +16,6 @@ int main()
 	laptop.SetVideoCard("NVIDIA");
 	laptop.SetRAM("32GB DDR4");
 	laptop.PrintLaptop();
+
+
 }
