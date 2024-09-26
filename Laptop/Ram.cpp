@@ -6,7 +6,7 @@ RAM::RAM(const char* n)
 }
 RAM::RAM(const RAM& other)
 {
-	this->name = new char(strlen(other.name) + 1);
+	this->name = new char[strlen(other.name) + 1];
 	strcpy_s(this->name, strlen(other.name) + 1, other.name);
 }
 void RAM::PrintRAM() const
@@ -15,7 +15,7 @@ void RAM::PrintRAM() const
 }
 RAM::~RAM()
 {
-	if (name != nullptr)delete[] name;
+	delete[] name;
 }
 void RAM::SetName(const char* n)
 {

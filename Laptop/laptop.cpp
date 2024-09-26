@@ -20,18 +20,21 @@ Laptop::Laptop(const char* n, const char* c, int p, const char* cpu_name, const 
 Laptop::Laptop(const char* n, const char* c) : Laptop(n, c, 0, "Default CPU", "Default SSD", "Default VideoCard", "Default RAM") {}
 Laptop::Laptop(const Laptop& other) : price(other.price), cpu(other.cpu), ssd(other.ssd), vid(other.vid), ram(other.ram)
 {
-	this->name = new char(strlen(other.name) + 1);
+	this->name = new char[strlen(other.name) + 1];
 	strcpy_s(this->name, strlen(other.name) + 1, other.name);
 
-	this->color = new char(strlen(other.color) + 1);
+	this->color = new char[strlen(other.color) + 1];
 	strcpy_s(this->color, strlen(other.color) + 1, other.color);
+
 	cout << "COPY" << endl;
+	laptopCount++;
 }
 Laptop::~Laptop()
 {
-	if (name != nullptr)delete[] name;
-	if (color != nullptr)delete[] color;
+	delete[] name;
+	delete[] color;
 	laptopCount--;
+	cout << "Destruct lap" << endl;
 }
 void Laptop::PrintLaptop() const
 {

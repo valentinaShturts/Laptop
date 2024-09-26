@@ -6,7 +6,7 @@ VideoCard::VideoCard(const char* n)
 }
 VideoCard::VideoCard(const VideoCard& other)
 {
-	this->name = new char(strlen(other.name) + 1);
+	this->name = new char[strlen(other.name) + 1];
 	strcpy_s(this->name, strlen(other.name) + 1, other.name);
 }
 void VideoCard::PrintVideoCard() const
@@ -15,7 +15,7 @@ void VideoCard::PrintVideoCard() const
 }
 VideoCard::~VideoCard()
 {
-	if (name != nullptr)delete[] name;
+	delete[] name;
 }
 void VideoCard::SetName(const char* n)
 {

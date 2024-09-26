@@ -6,7 +6,7 @@ CPU::CPU(const char* n)
 }
 CPU::CPU(const CPU& other)
 {
-	this->name = new char(strlen(other.name) + 1);
+	this->name = new char[strlen(other.name) + 1];
 	strcpy_s(this->name, strlen(other.name) + 1, other.name);
 }
 void CPU::PrintCPU() const
@@ -15,7 +15,8 @@ void CPU::PrintCPU() const
 }
 CPU::~CPU()
 {
-	if (name != nullptr)delete[] name;
+	delete[] name;
+	cout << "Destruct cpu" << endl;
 }
 void CPU::SetName(const char* n)
 {
